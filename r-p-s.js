@@ -14,9 +14,14 @@ let drawPoints = 0;
 function game(){
     for (let counter = 1; counter < 6; counter++){
         const playerSelection = prompt(`\nRound ${counter}/5\nROCK, PAPER, SCISSORS!\nGO!\n`);
-        if (playerSelection.toLowerCase() == "rock" || "paper" || "scissors"){
-            playRound(playerSelection.toLowerCase());
-        } else {
+        
+        switch(playerSelection.toLowerCase()){
+            case "rock":
+            case "paper":
+            case "scissors":
+            playRound(playerSelection);
+            break;
+            default:
             console.log(invalid);
             counter -= 1;
         }
