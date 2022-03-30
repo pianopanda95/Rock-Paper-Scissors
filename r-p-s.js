@@ -49,15 +49,15 @@ function countPoints(playerSelection, compSelection){
     } else if (playerSelection == "rock"){
         (compSelection == "scissors") ?
          playerPoints += 1 :
-         compPoints =+ 1;
+         compPoints += 1;
     } else if (playerSelection == "paper"){
         (compSelection == "rock") ?
          playerPoints += 1 :
-         compPoints =+ 1;
+         compPoints += 1;
     } else if (playerSelection == "scissors"){
         (compSelection == "paper") ?
          playerPoints += 1 :
-         compPoints =+ 1;
+         compPoints += 1;
     } else {
         console.log(invalid);
     }
