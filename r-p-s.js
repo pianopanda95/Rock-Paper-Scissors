@@ -26,6 +26,7 @@ function game(){
             counter -= 1;
         }
     }
+    playerPoints = compPoints = drawPoints = 0;
 }
 
 
