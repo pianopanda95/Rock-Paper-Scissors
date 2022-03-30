@@ -13,9 +13,13 @@ let drawPoints = 0;
 
 function game(){
     for (let counter = 1; counter < 6; counter++){
-        const playerSelection = prompt(`    Round ${counter}/5\n
-                                \nROCK, PAPER, SCISSORS!\nGO!\n`);
-        playRound(playerSelection.toLowerCase());
+        const playerSelection = prompt(`\nRound ${counter}/5\nROCK, PAPER, SCISSORS!\nGO!\n`);
+        if (playerSelection.toLowerCase() == "rock" || "paper" || "scissors"){
+            playRound(playerSelection.toLowerCase());
+        } else {
+            console.log(invalid);
+            counter -= 1;
+        }
     }
 }
 
@@ -32,18 +36,15 @@ function playRound(playerSelection, compSelection = computerPlay()){
             (compSelection == "rock") ?
             console.log(win) :
             console.log(lose);
-    } else if (playerSelection == "scissors"){
+    } else {
             (compSelection == "paper") ?
             console.log(win) :
             console.log(lose);
-    } else {
-        console.log(invalid);
     }
     countPoints(playerSelection, compSelection);
 }
 
 function countPoints(playerSelection, compSelection){
-    console.log(playerSelection, compSelection);
     if (playerSelection == compSelection){
          drawPoints += 1;
     } else if (playerSelection == "rock"){
@@ -54,12 +55,10 @@ function countPoints(playerSelection, compSelection){
         (compSelection == "rock") ?
          playerPoints += 1 :
          compPoints += 1;
-    } else if (playerSelection == "scissors"){
+    } else {
         (compSelection == "paper") ?
          playerPoints += 1 :
          compPoints += 1;
-    } else {
-        console.log(invalid);
     }
     console.log(playerPoints, drawPoints, compPoints);
 }
