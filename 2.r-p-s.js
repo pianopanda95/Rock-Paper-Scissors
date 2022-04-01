@@ -9,8 +9,8 @@ let drawPoints = 0;
 
 function game(){
     for (let counter = 1; counter < 6; counter++){
-        const playerSelection = prompt(`\nRound ${counter}/5\nROCK, PAPER, SCISSORS!\nGO!\n`);
-        if (rps.includes(playerSelection.toLowerCase())){
+        const playerSelection = prompt(`\nRound ${counter}/5\nROCK, PAPER, SCISSORS!\nGO!\n`).toLowerCase();
+        if (rps.includes(playerSelection)){
             playRound(playerSelection);
         } else {
             console.log(invalid);
