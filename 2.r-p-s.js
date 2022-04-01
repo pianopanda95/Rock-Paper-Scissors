@@ -17,7 +17,7 @@ function game(){
             counter -= 1;
         }
     }
-    playerPoints = compPoints = drawPoints = 0;
+    resetGame();
 }
 
 
@@ -53,6 +53,17 @@ function lose(){
 function draw(){
     console.log("It's a draw!");
     drawPoints += 1;
+}
+
+function resetGame(){
+    if (compPoints < playerPoints){
+        alert("CONGRATS!\nYou won the game!");
+    } else if (compPoints > playerPoints){
+        alert("Game over!\nYou lost.");
+    } else {
+        alert("No winners...\nYou and the computer has the same points.")
+    }
+    playerPoints = compPoints = drawPoints = 0;
 }
 
 
