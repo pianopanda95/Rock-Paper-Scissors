@@ -33,7 +33,7 @@ function playRound(playerSelection, compSelection = computerPlay()){
             (compSelection == "rock") ?
             win():
             lose();
-    } else {
+    } else if (playerSelection == "scissors"){
             (compSelection == "paper") ?
             win():
             lose();
