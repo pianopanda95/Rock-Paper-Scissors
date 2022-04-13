@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(5, 107, 5);
+    text-align: center;
+    font-size: 32px;
+}
+
+h1, h2, p {
+    text-shadow: 2px 2px rgb(80, 80, 80);
+}
+
+
+img {
+    height: 160px;
+    width: 200px;
+}
+
+button {
+    padding: 15px;
+    width: 230px;
+    margin: 10px;
+    background-color: rgb(56, 223, 167);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+button:disabled {
+    filter: brightness(50%);
+}
+.roundpic {
+    opacity: 0;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    margin-left: 200px;
+}
+
+
+@keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+    100% {animation-play-state: paused;}
+}
