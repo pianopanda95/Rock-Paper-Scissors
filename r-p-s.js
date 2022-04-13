@@ -21,13 +21,16 @@ para2.textContent = '';
 const resetButton = document.querySelector('#resetButton');
 resetButton.style.display = 'none';
 
+const winpic = document.querySelector('#winpic');
+const losepic = document.querySelector('#losepic');
+
 
 for (button of rpsButtons) {
     button.addEventListener('click', (e) => {
-    const playerSelection = e.target.value;
+    const playerSelection = e.currentTarget.value;
     playRound(playerSelection);
-    playerPoints.textContent = pp;
-    compPoints.textContent = cp;
+    playerPoints.textContent = `You: ${pp}`;
+    compPoints.textContent = `Computer: ${cp}`;
     });
 }
 
@@ -64,10 +67,12 @@ function playRound(playerSelection, compSelection = computerPlay()){
 function win() {
     para2.textContent = 'You won this round!';
     pp += 1;
+    winpic.style.animation = 'fadeInOut 1.2s';
 }
 function lose() {
     para2.textContent = 'You lost this round!';
     cp += 1;
+    losepic.style.animation = 'fadeInOut 1.2s';
 }
 function draw() {
     para2.textContent = `It's a draw!`;
@@ -88,8 +93,8 @@ function end(){
 
 resetButton.addEventListener('click', (e) => {
     cp = pp = 0;
-    playerPoints.textContent = pp;
-    compPoints.textContent = cp;
+    playerPoints.textContent = `You: ${pp}`;
+    compPoints.textContent = `Computer: ${cp}`;
     para1.textContent = '';
     para2.textContent = '';
     resetButton.style.display = 'none ';
